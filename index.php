@@ -54,8 +54,8 @@ if (!LINE_CHANNEL_ACCESS_TOKEN) {
 }
 
 if (!is_file(GOOGLE_SERVICE_ACCOUNT_JSON)) {
-    http_response_code(500);
-    echo json_encode(['error' => 'Google service account JSON not found']);
+    http_response_code(200);
+    echo json_encode(['status' => 'skip google (no credentials)']);
     exit;
 }
 
